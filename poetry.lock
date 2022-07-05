@@ -154,6 +154,18 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-logging-loki"
+version = "0.3.1"
+description = "Python logging handler for Grafana Loki."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+requests = "*"
+rfc3339 = ">=6.1"
+
+[[package]]
 name = "requests"
 version = "2.28.1"
 description = "Python HTTP for Humans."
@@ -170,6 +182,14 @@ urllib3 = ">=1.21.1,<1.27"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "rfc3339"
+version = "6.2"
+description = "Format dates according to the RFC 3339."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "segment-analytics-python"
@@ -220,7 +240,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "27eb0811daebfd4868b5efa892fd0db22a02e42c04b0b0ea84559a0872af04eb"
+content-hash = "351f622cc05753ff894064597a5549a0f11187702ca9d93d4bf4844213b62d7b"
 
 [metadata.files]
 atomicwrites = [
@@ -283,9 +303,17 @@ python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
+python-logging-loki = [
+    {file = "python-logging-loki-0.3.1.tar.gz", hash = "sha256:b83610c8a3adc99fbab072493b91dfb25ced69be4874fefe3ab457b391adbf60"},
+    {file = "python_logging_loki-0.3.1-py3-none-any.whl", hash = "sha256:8a9131db037fbea3d390089c4c32dbe7ed233944905079615a9fb6f669b0f4e6"},
+]
 requests = [
     {file = "requests-2.28.1-py3-none-any.whl", hash = "sha256:8fefa2a1a1365bf5520aac41836fbee479da67864514bdb821f31ce07ce65349"},
     {file = "requests-2.28.1.tar.gz", hash = "sha256:7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"},
+]
+rfc3339 = [
+    {file = "rfc3339-6.2-py3-none-any.whl", hash = "sha256:f44316b21b21db90a625cde04ebb0d46268f153e6093021fa5893e92a96f58a3"},
+    {file = "rfc3339-6.2.tar.gz", hash = "sha256:d53c3b5eefaef892b7240ba2a91fef012e86faa4d0a0ca782359c490e00ad4d0"},
 ]
 segment-analytics-python = [
     {file = "segment-analytics-python-2.2.0.tar.gz", hash = "sha256:d9bbdd554d57fdfc9d8ebe1e5e0a891154aa9c5f5a79b78925861d5bd4789c41"},
