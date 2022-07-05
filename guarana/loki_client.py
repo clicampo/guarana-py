@@ -5,7 +5,7 @@ from multiprocessing import Queue
 
 class LokiClient:
 
-    def __init__(self, loki_url: str, loki_username: str, loki_password: str, queue: bool = True):
+    def __init__(self, loki_url: str, loki_username: str, loki_password: str, queue: bool):
         if queue:
             self.handler = self.set_handler_loki_queue(loki_url, loki_username, loki_password)
         else:
