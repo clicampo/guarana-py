@@ -4,7 +4,14 @@ from loki_client import LokiClient
 from segment_client import SegmentClient
 
 class EventTracker:
-    def __init__(self, segment_write_key: str, loki_url: str, loki_username: str, loki_password: str, queue: bool = True):
+    def __init__(
+        self, 
+        segment_write_key: str, 
+        loki_url: str, loki_username: 
+        str, loki_password: str, queue: 
+        bool = True
+        ):
+        
         self.segment_client = SegmentClient(segment_write_key)
         self.loki_client = LokiClient(
             loki_url=loki_url,
