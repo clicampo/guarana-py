@@ -18,7 +18,3 @@ such as screenshots, data snapshots, etc... -->
 
 <!--- any dependencies for the change to go upstream or activities
 that need to be done after PR -->
-
-#### Retool pages or queries that need to be updated
-
-<!--- any retool logic that depends on the changes on this PR-->
