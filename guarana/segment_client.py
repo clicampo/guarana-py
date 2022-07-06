@@ -17,7 +17,7 @@ class SegmentClient:
         user_id: str = None,
     ):
         analytics.track(
-            event_name=event_name,
+            event=event_name,
             properties=properties,
             user_id=user_id,
         )
