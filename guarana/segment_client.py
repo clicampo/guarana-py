@@ -19,5 +19,5 @@ class SegmentClient:
         analytics.track(
             event=event_name,
             properties=properties,
-            user_id=user_id,
+            user_id=str(user_id),
         )
