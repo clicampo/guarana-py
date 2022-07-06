@@ -1,6 +1,7 @@
 __version__ = '0.1.0'
 
-from segment_client import SegmentClient
+from .segment_client import SegmentClient
+
 
 class EventTracker:
     def __init__(self, segment_write_key: str):
