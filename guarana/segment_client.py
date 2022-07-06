@@ -1,5 +1,6 @@
 import analytics
 
+
 class SegmentClient:
     def __init__(write_key: str):
         analytics.write_key = write_key
