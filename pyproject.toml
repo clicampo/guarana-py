@@ -7,6 +7,7 @@ authors = ["Rodrigo Godinho <rodrigolegod@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 segment-analytics-python = "^2.2.0"
+loguru = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
