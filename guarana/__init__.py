@@ -16,7 +16,7 @@ class EventTracker:
 
 
 
-    def track(self, event_name: str, properties: dict, user_id: str = ''):
+    def track(self, event_name: str, properties: dict, user_id: str = None):
         sucess, msg = self.segment_client.track(
             event_name=event_name,
             properties=properties,
