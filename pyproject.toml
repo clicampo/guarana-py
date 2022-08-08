@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "guarana"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Rodrigo Godinho <rodrigolegod@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 segment-analytics-python = "^2.2.0"
 loguru = "^0.6.0"
 
