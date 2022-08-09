@@ -16,12 +16,12 @@ class EventTracker:
 
 
 
-    def track(self, event_name: str, properties: dict, user_id: str = None, anonymousId: str = None):
+    def track(self, event_name: str, properties: dict, user_id: str = None, anonymous_id: str = None):
         sucess, msg = self.segment_client.track(
             event_name=event_name,
             properties=properties,
             user_id=user_id,
-            anonymousId=anonymousId,
+            anonymous_id=anonymous_id,
         )
         if sucess:
             logger.success(msg)
