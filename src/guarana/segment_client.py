@@ -18,12 +18,14 @@ class SegmentClient:
         event_name: str,
         properties: dict,
         user_id: str = None,
+        anonymousId: str = None,
     ) -> Any:   
 
         succes, msg = self.client.track(
             event=event_name,
             properties=properties,
             user_id=str(user_id),
+            anonymousId=str(anonymousId),
         )
         return succes, msg
 
