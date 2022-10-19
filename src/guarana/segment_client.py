@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 
 import segment.analytics as analytics
 from loguru import logger
@@ -11,9 +11,9 @@ class SegmentClient:
         self.client.on_error = self.on_error
     
 
-    def identify(self, user_id: str, traits: dict) -> Any:
+    def identify(self, user_id: str, traits: dict, anonymous_id: Optional[str] = None) -> Any:
         try:
-            self.client.identify(user_id=user_id, traits=traits)
+            self.client.identify(user_id=user_id, anonymous_id=anonymous_id, traits=traits)
             return { "success": True, "msg": "Identify method called successfully" }
         except Exception as e:
             return { "success": False, "msg": e }
