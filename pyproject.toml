@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "guarana"
-version = "2.1.0"
+version = "2.1.1"
 description = ""
-authors = ["Rodrigo Godinho <rodrigolegod@gmail.com>"]
+authors = ["Rodrigo Godinho <rodrigolegod@gmail.com>", "Antonio Bertino <antoniontv18@gmail.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
