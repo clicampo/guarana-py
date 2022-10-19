@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, time
 from typing import Optional
 from uuid import UUID
 
@@ -40,8 +40,8 @@ class CustomerCall(BaseModel):
     nfe_validated_at: Optional[datetime]
     crm_validated: Optional[bool]
     crm_validated_at: Optional[datetime]
-    business_hours_open: Optional[str]
-    business_hours_close: Optional[str]
+    business_hours_open: Optional[time]
+    business_hours_close: Optional[time]
     address_type: Optional[str]
     address_reference: Optional[str]
     cuisine_category: Optional[str]
@@ -50,7 +50,7 @@ class CustomerCall(BaseModel):
     customer_type: Optional[str]
     is_blocked: Optional[bool]
     notes: Optional[str]
-    id_delivery_category: Optional[str]
+    id_delivery_category: Optional[UUID]
 
     def __init__(self, **kwargs):
         kwargs["firstname"] = kwargs["name"]
