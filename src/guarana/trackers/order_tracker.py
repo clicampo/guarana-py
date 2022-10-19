@@ -12,12 +12,12 @@ class OrderTracker(guarana.EventTracker):
 
         self.segment_client.track(
             event_name=OrderTrackEvents.order_completed,
-            user_id=order_call.user_id,
+            user_id=str(order_call.user_id),
             properties={**order_track_properties, **kwargs, 'email': email}
         )
 
         self.segment_client.identify(
-            user_id=order_call.user_id,
+            user_id=str(order_call.user_id),
             traits=dict(
                 email=email,
                 last_order_placed=order_call.created_at
