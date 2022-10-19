@@ -5,7 +5,7 @@ from guarana.schemas.order import OrderCall
 
 class OrderTracker(guarana.EventTracker):
     def __init__(self, segment_write_key: str):
-        super.__init__(segment_write_key=segment_write_key)
+        super().__init__(segment_write_key=segment_write_key)
 
     def track_order_placed(self, order_call: OrderCall, email: str, **kwargs):
         order_track_properties = order_call.dict(exclude_none=True, exclude_unset=True)
