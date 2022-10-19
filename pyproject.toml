@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "guarana"
-version = "2.1.3"
+version = "2.1.4"
 description = ""
 authors = ["Rodrigo Godinho <rodrigolegod@gmail.com>", "Antonio Bertino <antoniontv18@gmail.com"]
 
