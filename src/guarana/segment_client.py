@@ -1,4 +1,5 @@
 from typing import Any
+
 import segment.analytics as analytics
 from loguru import logger
 
