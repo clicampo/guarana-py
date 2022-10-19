@@ -7,7 +7,7 @@ from guarana.schemas.base import BaseModel
 
 class CustomerCall(BaseModel):
     email: str
-    id_customer: str
+    id_customer: UUID
     name: Optional[str]
     firstname: Optional[str]
     street: Optional[str]
