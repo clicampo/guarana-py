@@ -2,10 +2,10 @@ from datetime import date, datetime
 from decimal import Decimal
 from uuid import UUID
 
-from guarana import schemas
+from guarana.schemas.base import BaseModel
 
 
-class OrderCall(schemas.BaseModel):
+class OrderCall(BaseModel):
     subtotal: Decimal
     discount: Decimal
     total: Decimal
