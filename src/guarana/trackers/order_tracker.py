@@ -20,13 +20,13 @@ class OrderTracker(guarana.EventTracker):
         match str(order_call.id_order_category):
             case "055ebaa9-7583-4d47-9ce8-a5d772f7a91d":
                 # Sampling order
-                identify_payload |= {"last_sampling_placed": order_call.created_at}
+                identify_payload |= {"last_sampling_placed_ts": order_call.created_at}
             case "44895221-7870-4aeb-b570-4ceb251e9663":
                 # Standard order
-                identify_payload |= {"last_order_placed": order_call.created_at}
+                identify_payload |= {"last_order_placed_ts": order_call.created_at}
             case _:
                 # Everything else
-                identify_payload |= {"last_order_placed": order_call.created_at}
+                identify_payload |= {"last_order_placed_ts": order_call.created_at}
 
         self.segment_client.identify(
             user_id=str(order_call.user_id),
