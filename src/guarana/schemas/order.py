@@ -17,5 +17,3 @@ class OrderCall(BaseModel):
     id_order_category: UUID
     id_customer: UUID
     id_coupon: Optional[UUID]
-    created_at: datetime
-
