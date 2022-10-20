@@ -5,6 +5,7 @@ description = ""
 authors = [
   "Rodrigo Godinho <rodrigolegod@gmail.com>",
   "Antonio Bertino <antoniontv18@gmail.com>",
+  "Gabriel Montañola <gabriel@montanola.com>",
 ]
 
 [tool.poetry.dependencies]
