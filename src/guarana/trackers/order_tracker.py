@@ -9,7 +9,7 @@ class OrderTracker(guarana.EventTracker):
 
     def track_order_placed(self, order_call: OrderCall, email: str, **kwargs):
         order_track_properties = order_call.dict(exclude_none=True, exclude_unset=True)
-        identify_payload = {"email": email}
+        identify_payload = {"email": email, "id_customer": str(order_call.id_customer)}
 
         self.segment_client.track(
             event_name=OrderTrackEvents.order_completed,
