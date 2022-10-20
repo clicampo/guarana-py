@@ -8,22 +8,18 @@ from guarana.schemas.base import BaseModel
 class CustomerCall(BaseModel):
     email: str
     id_customer: UUID
-    name: Optional[str]
-    firstname: Optional[str]
+    name: Optional[str] = Field(alias="firstname")
     street: Optional[str]
     number: Optional[str]
     complement: Optional[str]
     address: Optional[str]
-    neighborhood: Optional[str]
-    bairro: Optional[str]
+    bairro: Optional[str] = Field(alias="neighborhood")
     state: Optional[str]
     city: Optional[str]
     contact_name: Optional[str]
-    cellphone: Optional[str]
-    phone: Optional[str]
+    cellphone: Optional[str] = Field(alias="phone")
     payment_schedule_in_days: Optional[int]
-    cep: Optional[str]
-    zip: Optional[str]
+    cep: Optional[str] = Field(alias="zip")
     cpf: Optional[str]
     cnpj: Optional[str]
     is_shopping_enabled: Optional[bool]
