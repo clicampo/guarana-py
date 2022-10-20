@@ -4,7 +4,7 @@ version = "2.2.2"
 description = ""
 authors = [
   "Rodrigo Godinho <rodrigolegod@gmail.com>",
-  "Antonio Bertino <antoniontv18@gmail.com",
+  "Antonio Bertino <antoniontv18@gmail.com>",
 ]
 
 [tool.poetry.dependencies]
