@@ -52,11 +52,10 @@ class CustomerCall(BaseModel):
 
     @root_validator
     def build_address(cls, values) -> dict:
-        address_string = ""
-        if values["street"]:
-            address_string = values["street"]
-        else:
+        if not values["street"]:
             return values
+
+        address_string = values["street"]
         if values["number"]:
             address_string += f", {values['number']}"
         if values["complement"]:
