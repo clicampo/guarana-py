@@ -9,3 +9,8 @@ class BaseModel(PydanticBaseModel):
     def __init__(self, **kwargs):
         kwargs["user_id"] = kwargs["id_customer"]
         super().__init__(**kwargs)
+
+    class Config:
+        json_encoders = {
+            UUID: lambda x: str(x),
+        }
