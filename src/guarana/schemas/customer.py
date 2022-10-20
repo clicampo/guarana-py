@@ -15,11 +15,11 @@ class CustomerCall(BaseModel):
     number: Optional[str]
     complement: Optional[str]
     address: Optional[str]
-    bairro: Optional[str] = Field(alias="neighborhood")
     state: Optional[str]
     city: Optional[str]
     contact_name: Optional[str]
     cellphone: Optional[str] = Field(alias="phone")
+    neighborhood: Optional[str] = Field(alias="bairro")
     payment_schedule_in_days: Optional[int]
     cep: Optional[str] = Field(alias="zip")
     cpf: Optional[str]
