@@ -3,6 +3,7 @@ from typing import Optional
 from uuid import UUID
 
 from pydantic import Field, root_validator
+
 from guarana.schemas.base import BaseModel
 
 
@@ -49,4 +50,18 @@ class CustomerCall(BaseModel):
     notes: Optional[str]
     id_delivery_category: Optional[UUID]
 
+    @root_validator
+    def build_address(cls, values) -> dict:
+        address_string = ""
+        if values["street"]:
+            address_string = values["street"]
+        else:
+            return values
+        if values["number"]:
+            address_string += f", {values['number']}"
+        if values["complement"]:
+            address_string += f" - {values['complement']}"
 
+        values["address"] = address_string
+
+        return values
