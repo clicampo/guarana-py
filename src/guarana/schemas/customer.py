@@ -2,6 +2,7 @@ from datetime import datetime, time
 from typing import Optional
 from uuid import UUID
 
+from pydantic import Field, root_validator
 from guarana.schemas.base import BaseModel
 
 
@@ -48,11 +49,4 @@ class CustomerCall(BaseModel):
     notes: Optional[str]
     id_delivery_category: Optional[UUID]
 
-    def __init__(self, **kwargs):
-        kwargs["firstname"] = kwargs["name"]
-        kwargs["address"] = f'{kwargs["street"]} {kwargs["number"]} {kwargs["complement"]}'
-        kwargs["bairro"] = kwargs["neighborhood"]
-        kwargs["phone"] = kwargs["cellphone"]
-        kwargs["zip"] = kwargs["cep"]
 
-        super().__init__(**kwargs)
