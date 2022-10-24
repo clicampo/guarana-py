@@ -1,4 +1,5 @@
 from datetime import datetime, time
+from decimal import Decimal
 from typing import Optional
 from uuid import UUID
 
@@ -49,6 +50,9 @@ class CustomerCall(BaseModel):
     is_blocked: Optional[bool]
     notes: Optional[str]
     id_delivery_category: Optional[UUID]
+    last_15_days_aov: Optional[Decimal]
+    last_30_days_aov: Optional[Decimal]
+    all_time_aov: Optional[Decimal]
 
     @root_validator
     def build_address(cls, values) -> dict:
