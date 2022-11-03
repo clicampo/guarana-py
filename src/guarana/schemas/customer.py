@@ -46,6 +46,7 @@ class CustomerCall(BaseModel):
     cuisine_category: Optional[str]
     blocked_by_credit_threshold: Optional[bool]
     id_customer_origin: Optional[UUID]
+    customer_origin_source: Optional[str]
     customer_type: Optional[str]
     is_blocked: Optional[bool]
     notes: Optional[str]
