@@ -43,6 +43,7 @@ class CustomerCall(BaseModel):
     business_hours_close: Optional[time]
     address_type: Optional[str]
     address_reference: Optional[str]
+    met_through: Optional[str]
     cuisine_category: Optional[str]
     blocked_by_credit_threshold: Optional[bool]
     id_customer_origin: Optional[UUID]
