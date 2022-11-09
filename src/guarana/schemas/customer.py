@@ -11,14 +11,14 @@ from guarana.schemas.base import BaseModel
 class CustomerCall(BaseModel):
     email: str
     id_customer: UUID
-    name: Optional[str] = Field(alias="firstname")
+    name: Optional[str] = Field(alias="nome_estabelecimento")
     street: Optional[str]
     number: Optional[str]
     complement: Optional[str]
     address: Optional[str]
     state: Optional[str]
     city: Optional[str]
-    contact_name: Optional[str]
+    contact_name: Optional[str] = Field(alias="firstname")
     cellphone: Optional[str] = Field(alias="phone")
     neighborhood: Optional[str] = Field(alias="bairro")
     payment_schedule_in_days: Optional[int]
@@ -54,6 +54,9 @@ class CustomerCall(BaseModel):
     last_15_days_aov: Optional[Decimal]
     last_30_days_aov: Optional[Decimal]
     all_time_aov: Optional[Decimal]
+
+    class Config:
+      allow_population_by_field_name = True
 
     @root_validator
     def build_address(cls, values) -> dict:
