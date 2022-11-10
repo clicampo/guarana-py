@@ -3,9 +3,14 @@ from decimal import Decimal
 from typing import Optional
 from uuid import UUID
 
-from pydantic import Field, root_validator
+from pydantic import Field, root_validator, BaseModel as PydanticBaseModel
 
 from guarana.schemas.base import BaseModel
+
+class CustomerOrigin(PydanticBaseModel):
+    source: Optional[str]
+    commercial_representative_email: Optional[str]
+    customer_creator_email: Optional[str]
 
 
 class CustomerCall(BaseModel):
@@ -54,6 +59,10 @@ class CustomerCall(BaseModel):
     last_15_days_aov: Optional[Decimal]
     last_30_days_aov: Optional[Decimal]
     all_time_aov: Optional[Decimal]
+    customer_origin: Optional[CustomerOrigin] = Field(exclude=True)
+    customer_origin_source: Optional[str]
+    customer_origin_creator_email: Optional[str] = Field(alias="customer_creator_email")
+    customer_origin_commercial_representative_email: Optional[str]
 
     class Config:
       allow_population_by_field_name = True
@@ -70,5 +79,23 @@ class CustomerCall(BaseModel):
             address_string += f" - {values['complement']}"
 
         values["address"] = address_string
+
+        return values
+
+    @root_validator
+    def build_customer_origin(cls, values) -> dict:
+        if not values.get("customer_origin"):
+            return values
+
+        data = values.get("customer_origin")
+
+        if data.source:
+          values["customer_origin_source"] = data.source
+
+        if data.customer_origin_creator_email:
+          values["customer_origin_creator_email"] = data.customer_origin_creator_email
+
+        if data.commercial_representative_email:
+          values["customer_origin_commercial_representative_email"] = data.commercial_representative_email
 
         return values
