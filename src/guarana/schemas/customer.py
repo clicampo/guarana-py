@@ -92,8 +92,8 @@ class CustomerCall(BaseModel):
         if data.source:
           values["customer_origin_source"] = data.source
 
-        if data.customer_origin_creator_email:
-          values["customer_origin_creator_email"] = data.customer_origin_creator_email
+        if data.customer_creator_email:
+          values["customer_origin_creator_email"] = data.customer_creator_email
 
         if data.commercial_representative_email:
           values["customer_origin_commercial_representative_email"] = data.commercial_representative_email
